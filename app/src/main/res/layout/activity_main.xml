@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ckcsu.git.sqtpktw.MainActivity">
+
+    <LinearLayout
+        android:layout_width="314dp"
+        android:layout_height="431dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_for_single_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="single_place_intent"
+            android:text="Button"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="231dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="doit"
+            android:text="Button"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="104dp" />
+
+        <Button
+            android:id="@+id/button_for_sql"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="place_intent"
+            android:text="Button"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="57dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.052" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="gotoSearch"
+        app:fabSize="mini"
+        app:srcCompat="@android:color/holo_orange_light"
+        tools:layout_editor_absoluteX="328dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</LinearLayout>
