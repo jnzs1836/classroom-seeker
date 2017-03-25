@@ -1,4 +1,4 @@
-package Place;
+package Tags;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,6 +16,9 @@ public class TagsGenerator {
 
     ArrayList<String> AllTags= new ArrayList<>();
     int  Count =5;
+
+    public TagsGenerator(){}
+
     public ArrayList<String> GenerateTags(Context context){
 
         FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(context);

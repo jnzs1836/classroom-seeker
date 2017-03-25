@@ -14,10 +14,14 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.ArrayList;
 
 import Place.Place;
+import Tags.TagsGenerator;
 import event.QueryEventN;
 import event.SearchErrorEvent;
 import sqldo.DBControler;
 import sqldo.FeedReaderDbHelper;
+
+
+
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -25,6 +29,25 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        TagsGenerator TG = new TagsGenerator();
+        ArrayList<String> get = TG.GenerateTags(getApplicationContext());
+
+        TextView TX0 = (TextView) findViewById(R.id.button3);
+        TextView TX1 = (TextView) findViewById(R.id.button4);
+        TextView TX2 = (TextView) findViewById(R.id.button5);
+        TextView TX3 = (TextView) findViewById(R.id.button6);
+        TextView TX4 = (TextView) findViewById(R.id.button7);
+        ArrayList<TextView> button = new ArrayList<>();
+        button.add(TX0);
+        button.add(TX1);
+        button.add(TX2);
+        button.add(TX3);
+        button.add(TX4);
+        for(int i = 0;i <5;i++){
+            String tem = get.get(i);
+            button.get(i).setText(tem);
+        }
+
 
 
 
@@ -45,8 +68,11 @@ public class SearchActivity extends AppCompatActivity {
                 //知道为什么这里要分开写么嘻嘻
                 db = mDbHelper.getReadableDatabase();
                 DBC = new DBControler(db);
-                //Place.TagsGenerator TG = new Place.TagsGenerator(getApplicationContext());
-                //TG.generateTags
+
+
+
+
+
                 Place placeget = new Place();
                 int[] location = {-1,-1,-1};
                 ArrayList<String> tags = new ArrayList<>();
