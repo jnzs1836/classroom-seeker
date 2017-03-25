@@ -19,6 +19,10 @@ public final class FeedReaderContract {
         public static final String COLUMN_NAME_LOCATION_FLOOR = "Floor";
         public static final String COLUMN_NAME_NUMBER = "Number";
         public static final String[] COLUMN_NAME_TITLE_TAGS = {"Tags1","Tags2","Tags3","Tags4","Tags5"};
+
+        public static final String TABLE_NAME_TAGS = "tags";
+
+
         public static final String TEXT_TYPE = " TEXT";
         public static final String INTEGER_TYPE = " INT";
         public static final String COMMA_SEP = ",";
@@ -35,8 +39,12 @@ public final class FeedReaderContract {
                         COLUMN_NAME_TITLE_TAGS[3] + TEXT_TYPE+COMMA_SEP+
                         COLUMN_NAME_TITLE_TAGS[4] + TEXT_TYPE+
                         " )";
+        public static String SQL_CREATE_TABLE_TAGS = "CREATE TABLE "+ TABLE_NAME_TAGS + " (" +
+                FeedEntry._ID +" INTEGER PRIMARY KEY," +FeedEntry.COLUMN_NAME_TITLE + TEXT_TYPE+
+                " )";
 
         public static final String SQL_DELETE_ENTRIES =
                 "DROP TABLE IF EXISTS " + FeedEntry.TABLE_NAME;
+
     }
 }

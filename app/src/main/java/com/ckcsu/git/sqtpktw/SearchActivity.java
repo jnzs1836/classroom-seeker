@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -24,6 +25,10 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+
+
+
     }
 
     public void gotoPlace(View view){
@@ -40,6 +45,8 @@ public class SearchActivity extends AppCompatActivity {
                 //知道为什么这里要分开写么嘻嘻
                 db = mDbHelper.getReadableDatabase();
                 DBC = new DBControler(db);
+                //Place.TagsGenerator TG = new Place.TagsGenerator(getApplicationContext());
+                //TG.generateTags
                 Place placeget = new Place();
                 int[] location = {-1,-1,-1};
                 ArrayList<String> tags = new ArrayList<>();
@@ -79,5 +86,16 @@ public class SearchActivity extends AppCompatActivity {
     public void SearchError(SearchErrorEvent SEE){
         EditText edite = (EditText)findViewById(R.id.editText);
         edite.setText("Please input again.");
+    }
+
+    public void gotoPlaceByTag(View view){
+        Intent intent = new Intent(this,ScrollingActivity.class);
+        TextView TV = (TextView) view;
+        CharSequence Tag = TV.getText();
+        String STag = Tag.toString();
+        Bundle bundle = new Bundle();
+        bundle.putString("name",STag);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
